@@ -7,7 +7,9 @@ class Film{
     public $adultFilm;
     public $genre;
 
-    function __construct($_title, $_year, $_adultFilm, Genre $_genre)
+
+    //costruttore
+    function __construct($_title, $_year, $_adultFilm, array $_genre)
     {
         $this->title = $_title;
         $this->year = $_year;
@@ -41,8 +43,8 @@ class Genre
 $scifi = new Genre('scifi');
 $cartoon = new Genre('cartoon');
 
-$interstellar = new Film('Interstellar',  2014, true, $scifi);
-$mulan = new Film('Mulan', 1998, false, $cartoon);
+$interstellar = new Film('Interstellar',  2014, true, [$scifi, $cartoon]);
+$mulan = new Film('Mulan', 1998, false, [$cartoon]);
 
 var_dump($interstellar);
 var_dump($mulan);
