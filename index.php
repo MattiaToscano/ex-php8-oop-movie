@@ -3,16 +3,16 @@
 class Film{
 
     public $title;
-    public $genre;
     public $year;
     public $adultFilm;
+    public $genre;
 
-    function __construct($_title, $_genre, $_year, $_adultFilm)
+    function __construct($_title, $_year, $_adultFilm, Genre $_genre)
     {
         $this->title = $_title;
-        $this->genre = $_genre;
         $this->year = $_year;
         $this->adultFilm = $_adultFilm;
+        $this->genre = $_genre;
     }
     public function filmForAdult()
     {
@@ -20,8 +20,29 @@ class Film{
     }
 }
 
-$interstellar = new Film('Interstellar', 'sci-fi', 2014, true);
-$mulan = new Film('Mulan', 'cartoon', 1998, false);
+
+
+class Genre
+{
+
+    public $genre;
+
+    function __construct($_genre)
+    {
+        $this->genre=$_genre;
+    }
+
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+}
+
+$scifi = new Genre('scifi');
+$cartoon = new Genre('cartoon');
+
+$interstellar = new Film('Interstellar',  2014, true, $scifi);
+$mulan = new Film('Mulan', 1998, false, $cartoon);
 
 var_dump($interstellar);
 var_dump($mulan);
