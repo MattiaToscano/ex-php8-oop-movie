@@ -15,6 +15,12 @@ class Film{
     }
 }
 
+$interstellar = new Film('Interstellar', 'sci-fi', 2014);
+$mulan = new Film('Mulan', 'cartoon', 1998);
+
+var_dump($interstellar)
+
+
 
 ?>
 
